@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package v1;
+option go_package = "github.com/shashi-rai/pvm-tools/pkg/api/v1";
+import "google/protobuf/timestamp.proto";
+
+service PvmService {
+    rpc GetStatus(PvmRequest) returns (PvmReply) {}
+}
+
+message PvmRequest {
+    string name = 1;
+}
+
+message PvmReply {
+    string message = 1;
+}
